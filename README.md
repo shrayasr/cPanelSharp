@@ -2,10 +2,11 @@
 
 A simple C# wrapper for accessing cPanel APIs. 
 
-## Caveats
+## Installation 
 
-- Currently the API returns the json in a string format. The user is expected to define the object and deserialize using a json deserializer ([json.net](http://www.newtonsoft.com/json), [Jil](https://github.com/kevin-montrose/Jil)).
-- Only API v2 supported
+```
+Install-Package cPanelSharp
+```
 
 ## Usage
 
@@ -48,3 +49,8 @@ var response = client.Api2("Email", "listpops", new
 ## Credits
 
 All credits to https://github.com/vexxhost/python-cpanelapi
+
+## Caveats
+
+- Currently the API returns the json in a string format. The user is expected to define the object and deserialize using a json deserializer ([json.net](http://www.newtonsoft.com/json), [Jil](https://github.com/kevin-montrose/Jil)).
+- Only API v2 supported
