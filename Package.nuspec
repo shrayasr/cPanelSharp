@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Package</id>
+    <version>1.0.0</version>
+    <authors>Shrayas</authors>
+    <owners>Shrayas</owners>
+    <licenseUrl>https://github.com/shrayasr/cPanelSharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/shrayasr/cPanelSharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple C# wrapper for accessing cPanel APIs</description>
+    <releaseNotes>First version</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>api wrapper</tags>
+    <dependencies>
+      <dependency id="RestSharp" version="105.2.3" />
+    </dependencies>
+  </metadata>
+</package>
