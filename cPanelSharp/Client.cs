@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace cPanelSharp
 {
-    public class Client
+    public class cPanelClient
     {
         private string _username;
         private string _password;
@@ -14,7 +14,7 @@ namespace cPanelSharp
         private string _protocol;
         private int _port;
 
-        public Client(string username, string host, string password = null, string accessHash = null, 
+        public cPanelClient(string username, string host, string password = null, string accessHash = null, 
             bool ssl = true, bool cpanel = false)
         {
             _username = username;

@@ -23,27 +23,27 @@ namespace cPanelSharpTest
         [ExpectedException(typeof(MissingCredentialsException))]
         public void PwAndAccessHashEmptyThrowsException()
         {
-            var client = new Client(_username, _hostname);
+            var client = new cPanelClient(_username, _hostname);
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidCredentialsException))]
         public void BothPwAndAccessHashNotEmptyThrowsException()
         {
-            var client = new Client(_username, _hostname, password: _password, accessHash: "foo");
+            var client = new cPanelClient(_username, _hostname, password: _password, accessHash: "foo");
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidCredentialsException))]
         public void CpanelAndAccessHashThrowsException()
         {
-            var client = new Client(_username, _hostname, accessHash: "foo", cpanel: true);
+            var client = new cPanelClient(_username, _hostname, accessHash: "foo", cpanel: true);
         }
 
         [TestMethod]
         public void ValidCredsCreatesClient()
         {
-            var client = new Client(_username, _hostname, password: _password, cpanel: true);
+            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
             Assert.IsNotNull(client);
         }
 
@@ -51,7 +51,7 @@ namespace cPanelSharpTest
         [ExpectedException(typeof(InvalidParametersException))]
         public void WhmAndNoUserThrowsException()
         {
-            var client = new Client(_username, _hostname, accessHash: "foo");
+            var client = new cPanelClient(_username, _hostname, accessHash: "foo");
             client.Api2("fooModule", "fooFunc");
         }
 
@@ -59,7 +59,7 @@ namespace cPanelSharpTest
         [ExpectedException(typeof(InvalidParametersException))]
         public void NoModuleThrowsException()
         {
-            var client = new Client(_username, _hostname, password: _password);
+            var client = new cPanelClient(_username, _hostname, password: _password);
             client.Api2("", "fooFunc");
         }
 
@@ -67,14 +67,14 @@ namespace cPanelSharpTest
         [ExpectedException(typeof(InvalidParametersException))]
         public void NoFunctionThrowsException()
         {
-            var client = new Client(_username, _hostname, password: _password, cpanel: true);
+            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
             client.Api2("fooModule", "");
         }
 
         [TestMethod]
         public void GetMonthlyBandwidthReturnsBandwidth()
         {
-            var client = new Client(_username, _hostname, password: _password, cpanel: true);
+            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
             var bandwidthResponse = client.Api2("Stats", "getmonthlybandwidth");
 
             Assert.IsTrue(bandwidthResponse.Length > 0);
