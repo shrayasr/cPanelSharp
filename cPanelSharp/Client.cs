@@ -110,7 +110,7 @@ namespace cPanelSharp
             var paramDict = new Dictionary<string, string>();
 
             foreach (var prop in param.GetType().GetProperties())
-                paramDict.Add(prop.Name, prop.GetValue(param).ToString());
+                paramDict.Add(prop.Name, prop.GetValue(param, null).ToString());
 
             return paramDict;
         }

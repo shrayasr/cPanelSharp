@@ -80,5 +80,14 @@ namespace cPanelSharpTest
             Assert.IsTrue(bandwidthResponse.Length > 0);
         }
 
+        [TestMethod]
+        public void GetEmailsByRegexReturnsEmails()
+        {
+            var client = new cPanelClient(_username, _hostname, password: _password, cpanel: true);
+            var emailListResponse = client.Api2("Email", "listpops", param: new { regex = "pr" });
+
+            Assert.IsTrue(emailListResponse.Length > 0);
+        }
+
     }
 }
