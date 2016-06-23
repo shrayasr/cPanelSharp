@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Package</id>
-    <version>1.0.0</version>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
     <authors>Shrayas</authors>
-    <owners>Shrayas</owners>
+    <owners>$author$</owners>
     <licenseUrl>https://github.com/shrayasr/cPanelSharp/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/shrayasr/cPanelSharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
